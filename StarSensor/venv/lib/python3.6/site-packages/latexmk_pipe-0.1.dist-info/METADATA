@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: latexmk-pipe
+Version: 0.1
+Summary: A simple python-script in the spirit of rubber_pipe.py to be able to use latexmk with pipes
+Home-page: https://github.com/tofgarion/latexmk-pipe
+Author: Christophe Garion
+Author-email: tofgarion@runbox.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# latexmk-pipe
+A simple python-script in the spirit of rubber_pipe.py to be able to use latexmk with pipes. The makefile should work on any Linux distribution (use INSTALL_DIR variable to specify directory in which install `latexmk-pipe`).
+
+You can use it to pass options "on the fly" to an existing LaTeX file. For instance:
+
+```
+echo "\PassOptionsToClass{answers,grades}{exam} \input{exam150128.tex} | latexmk-pipe > exam150128.sol.pdf
+```
+
+Temporary files are deleted if no errors are produced during the compilation process. The `-outdir` option can now be used.
+
+
